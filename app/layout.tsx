@@ -16,9 +16,6 @@ export default function RootLayout(props: Props) {
   return (
     <html lang="en">
       <body>
-        <div>
-          <Link href="/register">register</Link>
-        </div>
         {props.children}
         <div className={styles.background}>
           <img
