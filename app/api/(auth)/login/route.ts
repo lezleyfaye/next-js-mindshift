@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
+import { getUserByUsernameWithPasswordHash } from '../../../../database/users';
 
 const userSchema = z.object({
   username: z.string(),
@@ -33,6 +34,17 @@ export const POST = async (request: NextRequest) => {
     );
   }
   // check if user exists
+  const userWithPasswordHash = await getUserByUsernameWithPasswordHash(
+    result.data.username,
+  );
+
+  if (!userWithPasswordHash) {
+    return NextResponse.json(
+      { errors: [{ message: 'user not found' }] },
+      { status: 401 },
+    );
+  }
+
   // validate pw
   // create a session
   // create token
