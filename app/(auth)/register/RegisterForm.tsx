@@ -7,6 +7,7 @@ import { RegisterResponseBodyPost } from '../../api/(auth)/register/route';
 export default function RegisterForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState<{ message: string }[]>([]);
   const router = useRouter();
 
   return (
@@ -25,9 +26,13 @@ export default function RegisterForm() {
           return;
         }
         console.log(data.user);
+        // is this where it's redirecting to homepage after creating user?
         router.push('/');
       }}
     >
+      {errors.map((error) => (
+        <div key={`error-${error.message}`}>Error: {error.message}</div>
+      ))}
       <label>
         username:
         <input
