@@ -19,5 +19,4 @@ function connectOneTimeToDatabase() {
   return globalThis.postgresSqlClient;
 }
 
-// Connect to PostgreSQL
 export const sql = connectOneTimeToDatabase();

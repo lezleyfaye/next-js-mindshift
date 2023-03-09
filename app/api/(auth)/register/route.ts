@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
+import { getUserByUsername } from '../../../../database/users';
 
 // define type of user
 const userSchema = z.object({
@@ -38,7 +39,15 @@ export const POST = async (request: NextRequest) => {
   // compare username with db
   const user = await getUserByUsername(result.data.username);
 
+  if (user) {
+    return NextResponse.json(
+      { errors: [{ message: 'username is already taken' }] },
+      { status: 400 },
+    );
+  }
+
   // 3 hash the password
+
   // 4 create user
   // 5 create session
   //  5a create token
