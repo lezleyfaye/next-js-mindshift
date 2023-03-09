@@ -1,3 +1,4 @@
+import bcrypt from 'bcrypt';
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { getUserByUsernameWithPasswordHash } from '../../../../database/users';
@@ -46,8 +47,22 @@ export const POST = async (request: NextRequest) => {
   }
 
   // validate pw
+  const isPasswordValid = await bcrypt.compare(
+    result.data.password,
+    userWithPasswordHash.passwordHash,
+  );
+
+  if (!isPasswordValid) {
+    return NextResponse.json(
+      { errors: [{ message: 'password is not valid' }] },
+      { status: 401 },
+    );
+  }
   // create a session
   // create token
   // create session
   // add new header
+  return NextResponse.json({
+    user: { username: userWithPasswordHash.username },
+  });
 };
