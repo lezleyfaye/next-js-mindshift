@@ -1,7 +1,7 @@
 import bcrypt from 'bcrypt';
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
-import { getUserByUsername } from '../../../../database/users';
+import { createUser, getUserByUsername } from '../../../../database/users';
 
 // define type of user
 const userSchema = z.object({
@@ -50,10 +50,17 @@ export const POST = async (request: NextRequest) => {
   // 3 hash the password
   const passwordHash = await bcrypt.hash(result.data.password, 12);
 
-  console.log(passwordHash);
-
   // 4 create user
   const newUser = await createUser(result.data.username, passwordHash);
+
+  if (!newUser) {
+    return NextResponse.json(
+      { errors: [{ message: 'user creation failed' }] },
+      { status: 500 },
+    );
+  }
+  // return new user
+  return NextResponse.json({ user: { username: newUser.username } });
 
   // 5 create session
 
