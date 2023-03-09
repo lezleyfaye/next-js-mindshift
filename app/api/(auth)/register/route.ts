@@ -1,3 +1,4 @@
+import bcrypt from 'bcrypt';
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { getUserByUsername } from '../../../../database/users';
@@ -47,6 +48,7 @@ export const POST = async (request: NextRequest) => {
   }
 
   // 3 hash the password
+  const passwordHash = await bcrypt.hash(result.data.password, 12);
 
   // 4 create user
   // 5 create session

@@ -6,7 +6,7 @@ export type User = {
   passwordHash: string;
 };
 
-export const getUserByUsername = (username: string) => {
+export const getUserByUsername = async (username: string) => {
   const [user] = await sql<{ id: number; username: string }[]>`
     SELECT
       id,
@@ -17,4 +17,4 @@ export const getUserByUsername = (username: string) => {
       username = ${username}
   `;
   return user;
-});
+};
