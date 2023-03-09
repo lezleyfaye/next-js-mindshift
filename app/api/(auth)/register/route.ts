@@ -50,8 +50,13 @@ export const POST = async (request: NextRequest) => {
   // 3 hash the password
   const passwordHash = await bcrypt.hash(result.data.password, 12);
 
+  console.log(passwordHash);
+
   // 4 create user
+  const newUser = await createUser(result.data.username, passwordHash);
+
   // 5 create session
+
   //  5a create token
   //  5b create session
   // 6 return new username
