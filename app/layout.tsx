@@ -17,17 +17,19 @@ export default function RootLayout(props: Props) {
     <html lang="en">
       <body>
         {props.children}
-        <div className={styles.background}>
-          <img
-            className={styles.background}
-            src="/background.svg"
-            alt="tree silhoutte"
-            width="356"
-            height="137"
-          />
-        </div>
 
-        <footer className={styles.footer}>mindshift depression tracker</footer>
+        <footer className={styles.footer}>
+          <div className={styles.background}>
+            <img
+              className={styles.background}
+              src="/background.svg"
+              alt="tree silhoutte"
+              // width="356"
+              // height="137"
+            />
+          </div>
+          mindshift depression tracker
+        </footer>
       </body>
     </html>
   );
