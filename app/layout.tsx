@@ -1,6 +1,7 @@
 import './global.scss';
 import Image from 'next/image';
 import Link from 'next/link';
+import CookieBanner from './CookieBanner';
 import styles from './layout.module.scss';
 
 export const metadata = {

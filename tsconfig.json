@@ -23,6 +23,14 @@
       "@C:/Program": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/utils/localstorage.js",
+    "app/utils/cookies.js",
+    "app/error.js"
+  ],
   "exclude": ["node_modules"]
 }
