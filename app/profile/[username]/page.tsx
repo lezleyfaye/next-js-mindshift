@@ -1,7 +1,8 @@
 import { notFound } from 'next/navigation';
 import { getUserByUsername } from '../../../database/users';
+
 // fix this import path
-import styles from './profile/[username]/page.module.scss';
+// import styles from './profile/[username]/page.module.scss';
 
 type Props = { params: { username: string } };
 
