@@ -4,3 +4,5 @@
    error
    loading
    not-found
+
+2. fix import path of app\profile\[username]\page.module.scss in page.tsx
