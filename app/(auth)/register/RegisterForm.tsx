@@ -27,7 +27,7 @@ export default function RegisterForm() {
           return;
         }
         console.log(data.user);
-        // is this where it's redirecting to homepage after creating user?
+
         router.push(`/profile/${data.user.username}`);
       }}
     >
