@@ -1,10 +1,11 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { RegisterResponseBodyPost } from '../../api/(auth)/register/route';
+// import { getSafeReturnToPath } from '../../../util/validation';
+import { LoginResponseBodyPost } from '../../api/(auth)/login/route';
 
 // need onSubmit with await response, need onChange for inputs
-export default function RegisterForm() {
+export default function LoginForm(props: { returnTo?: string | string[] }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState<{ message: string }[]>([]);
@@ -22,15 +23,22 @@ export default function RegisterForm() {
             body: JSON.stringify({ username, password }),
           });
 
-          const data: RegisterResponseBodyPost = await response.json();
+          const data: LoginResponseBodyPost = await response.json();
 
           if ('errors' in data) {
             setErrors(data.errors);
             return;
           }
-          console.log(data.user);
 
-          router.push(`/profile/${data.user.username}`);
+          const returnTo = getSafeReturnToPath(props.returnTo);
+
+          if (returnTo) {
+            router.push(returnTo);
+            return;
+          }
+
+          router.replace(`/profile/${data.user.username}`);
+          router.refresh();
         }}
       >
         {errors.map((error) => (
