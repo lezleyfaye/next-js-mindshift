@@ -8,7 +8,7 @@ const userSchema = z.object({
   password: z.string(),
 });
 
-export type RegisterResponseBodyPost =
+export type LoginResponseBodyPost =
   | { errors: { message: string }[] }
   | { user: { username: string } };
 
