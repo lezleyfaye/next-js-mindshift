@@ -14,7 +14,9 @@ export type RegisterResponseBodyPost =
   | { errors: { message: string }[] }
   | { user: { username: string } };
 
-export async function POST(request: NextRequest) {
+export async function POST(
+  request: NextRequest,
+): Promise<NextResponse<RegisterResponseBodyPost>> {
   // 1 validate data
   const body = await request.json();
 
