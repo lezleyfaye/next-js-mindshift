@@ -12,7 +12,7 @@ export type LoginResponseBodyPost =
   | { errors: { message: string }[] }
   | { user: { username: string } };
 
-export const POST = async (request: NextRequest) => {
+export async function POST(request: NextRequest) {
   // validate the data
   const body = await request.json();
 
@@ -65,4 +65,4 @@ export const POST = async (request: NextRequest) => {
   return NextResponse.json({
     user: { username: userWithPasswordHash.username },
   });
-};
+}

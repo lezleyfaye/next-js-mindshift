@@ -13,7 +13,7 @@ export type RegisterResponseBodyPost =
   | { errors: { message: string }[] }
   | { user: { username: string } };
 
-export const POST = async (request: NextRequest) => {
+export async function POST(request: NextRequest) {
   // 1 validate data
   const body = await request.json();
 
@@ -67,4 +67,4 @@ export const POST = async (request: NextRequest) => {
   //  5a create token
   //  5b create session
   // 6 return new username
-};
+}
