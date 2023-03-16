@@ -1,6 +1,8 @@
+import crypto from 'node:crypto';
 import bcrypt from 'bcrypt';
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
+import { createSession } from '../../../../database/sessions';
 import { getUserByUsernameWithPasswordHash } from '../../../../database/users';
 
 const userSchema = z.object({
@@ -58,9 +60,12 @@ export async function POST(request: NextRequest) {
       { status: 401 },
     );
   }
-  // create a session
+  // creating a session:
+
   // create token
+  const token = crypto.randomBytes(80);
   // create session
+  const session = await createSession(token, userWithPasswordHash.id);
   // add new header
   return NextResponse.json({
     user: { username: userWithPasswordHash.username },
