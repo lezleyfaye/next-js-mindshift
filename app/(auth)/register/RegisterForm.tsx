@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { RegisterResponseBodyPost } from '../../api/(auth)/register/route';
 
 // need onSubmit with await response, need onChange for inputs
-export default function RegisterForm() {
+export default function RegisterForm(props: { returnTo?: string | string[] }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState<{ message: string }[]>([]);
@@ -26,9 +26,16 @@ export default function RegisterForm() {
           setErrors(data.errors);
           return;
         }
-        console.log(data.user);
 
-        router.push(`/profile/${data.user.username}`);
+        const returnTo = getSafeReturnToPath(props.returnTo);
+
+        if (returnTo) {
+          router.push(returnTo);
+          return;
+        }
+
+        router.replace(`/profile/${data.user.username}`);
+        router.refresh();
       }}
     >
       {errors.map((error) => (

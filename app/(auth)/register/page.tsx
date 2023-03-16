@@ -1,5 +1,7 @@
 import RegisterForm from './RegisterForm';
 
-export default function RegisterPage() {
-  return <RegisterForm />;
+type Props = { searchParams: { returnTo?: string | string[] } };
+
+export default function RegisterPage(props: Props) {
+  return <RegisterForm returnTo={props.searchParams.returnTo} />;
 }
