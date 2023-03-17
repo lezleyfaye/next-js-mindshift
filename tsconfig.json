@@ -29,7 +29,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/utils/localstorage.js",
-    "app/utils/cookies.js",
+    "app/utils/cookies.ts",
     "app/error.js"
   ],
   "exclude": ["node_modules"]
