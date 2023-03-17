@@ -28,10 +28,12 @@ export default function RegisterForm(props: { returnTo?: string | string[] }) {
           return;
         }
 
-        const returnTo = getSafeReturnToPath(props.returnTo);
-
-        if (returnTo) {
-          router.push(returnTo);
+        if (
+          props.returnTo &&
+          !Array.isArray(props.returnTo) &&
+          /^\/[a-zA-Z0-9-?=/]*$/.test(props.returnTo)
+        ) {
+          router.push(props.returnTo);
           return;
         }
 

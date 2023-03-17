@@ -30,11 +30,12 @@ export default function LoginForm(props: { returnTo?: string | string[] }) {
             return;
           }
 
-          const returnTo = getSafeReturnToPath(props.returnTo);
-
-          if (returnTo) {
-            router.push(returnTo);
-            return;
+          if (
+            props.returnTo &&
+            !Array.isArray(props.returnTo) &&
+            /^\/[a-zA-Z0-9-?=/]*$/.test(props.returnTo)
+          ) {
+            router.push(props.returnTo);
           }
 
           router.replace(`/profile/${data.user.username}`);

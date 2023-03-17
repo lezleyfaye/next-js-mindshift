@@ -40,6 +40,7 @@ export async function POST(
     );
   }
   // check if user exists
+  console.log('before userWithPassword');
   const userWithPasswordHash = await getUserByUsernameWithPasswordHash(
     result.data.username,
   );
@@ -67,7 +68,10 @@ export async function POST(
   // steps for creating a session:
 
   // create token
-  const token = crypto.randomBytes(80);
+  const token = crypto.randomBytes(60).toString('base64');
+
+  console.log('before createSession');
+
   // create session
   const session = await createSession(token, userWithPasswordHash.id);
 
@@ -77,6 +81,8 @@ export async function POST(
       { status: 500 },
     );
   }
+
+  console.log('before serializedCookie');
 
   const serializedCookie = createSerializedRegisterSessionTokenCookie(
     session.token,
