@@ -25,8 +25,8 @@ export default function RootLayout(props: Props) {
               className={styles.background}
               src="/background.svg"
               alt="tree silhoutte"
-              // width="356"
-              // height="137"
+              fill
+              style={{ objectFit: 'cover' }}
             />
           </div>
           mindshift depression tracker
