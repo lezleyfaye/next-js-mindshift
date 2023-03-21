@@ -16,5 +16,17 @@ export const createSession = cache(async (token: string, userId: number) => {
       id,
       token
     `;
+
+  await deletedExpiredSessions();
+
   return session;
+});
+
+export const deletedExpiredSessions = cache(async () => {
+  await sql`
+  DELETE from
+  sessions
+  WHERE
+  expiry_timestamp < now()
+  `;
 });
