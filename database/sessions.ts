@@ -50,7 +50,6 @@ export const getValidSessionByToken = cache(async (token: string) => {
     SELECT
       sessions.id,
       sessions.token,
-      sessions.csrf_secret
      FROM
       sessions
     WHERE
