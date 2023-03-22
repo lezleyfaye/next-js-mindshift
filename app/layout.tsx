@@ -17,6 +17,13 @@ export default function RootLayout(props: Props) {
   return (
     <html lang="en">
       <body>
+        <nav>
+          <Link href="login">Login</Link>
+          <Link href="register">Register</Link>
+          <Link href="logout" prefetch={false}>
+            Logout
+          </Link>
+        </nav>
         {props.children}
 
         <footer className={styles.footer}>

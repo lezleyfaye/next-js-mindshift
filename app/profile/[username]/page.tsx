@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getUserByUsername } from '../../../database/users';
 
@@ -13,5 +14,10 @@ export default async function UserProfile({ params }: Props) {
     notFound();
   }
 
-  return <h1>Hi {user.username}!</h1>;
+  return (
+    <>
+      <h1>Hi {user.username}!</h1>
+      <Link href="logout">logout</Link>
+    </>
+  );
 }
