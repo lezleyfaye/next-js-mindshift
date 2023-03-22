@@ -49,7 +49,7 @@ export const getValidSessionByToken = cache(async (token: string) => {
   const [session] = await sql<Session[]>`
     SELECT
       sessions.id,
-      sessions.token,
+      sessions.token
      FROM
       sessions
     WHERE
