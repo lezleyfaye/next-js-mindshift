@@ -17,7 +17,6 @@ export default async function UserProfile({ params }: Props) {
   return (
     <>
       <h1>Hi {user.username}!</h1>
-      <Link href="logout">logout</Link>
     </>
   );
 }
