@@ -1,8 +1,15 @@
 import './global.scss';
+import { Laila } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import CookieBanner from './CookieBanner';
 import styles from './layout.module.scss';
+
+const laila = Laila({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export const metadata = {
   title: 'mindshift',
@@ -15,29 +22,19 @@ type Props = {
 
 export default function RootLayout(props: Props) {
   return (
-    <html lang="en">
+    <html lang="en" className={laila.className}>
       <body>
         <nav>
           <Link href="login">Login</Link>
           <Link href="register">Register</Link>
+          <Link href="symptoms">Symptoms</Link>
           <Link href="logout" prefetch={false}>
             Logout
           </Link>
         </nav>
         {props.children}
 
-        <footer className={styles.footer}>
-          <div className={styles.background}>
-            <img
-              className={styles.background}
-              src="/background.svg"
-              alt="tree silhoutte"
-              fill
-              style={{ objectFit: 'cover' }}
-            />
-          </div>
-          mindshift depression tracker
-        </footer>
+        <footer className={styles.footer}>mindshift depression tracker</footer>
       </body>
     </html>
   );
