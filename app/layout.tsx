@@ -24,17 +24,22 @@ export default function RootLayout(props: Props) {
   return (
     <html lang="en" className={laila.className}>
       <body>
-        <nav>
-          <Link href="login">Login</Link>
-          <Link href="register">Register</Link>
-          <Link href="symptoms">Symptoms</Link>
-          <Link href="logout" prefetch={false}>
-            Logout
-          </Link>
-        </nav>
-        {props.children}
+        <div className={styles['bg-background']}>
+          <nav className={styles.navbar}>
+            <Link href="/">Home</Link>
+            <Link href="login">Login</Link>
+            <Link href="register">Register</Link>
+            <Link href="symptoms">Symptoms</Link>
+            <Link href="logout" prefetch={false}>
+              Logout
+            </Link>
+          </nav>
+          {props.children}
 
-        <footer className={styles.footer}>mindshift depression tracker</footer>
+          <footer className={styles.footer}>
+            mindshift depression tracker
+          </footer>
+        </div>
       </body>
     </html>
   );
