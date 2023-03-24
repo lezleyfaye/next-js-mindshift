@@ -9,5 +9,15 @@ module.exports = {
   theme: {
     extend: {},
   },
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+          primary: '#182E08',
+          // secondary: '#ABD8AE',
+        },
+      },
+    ],
+  },
   plugins: [require('daisyui')],
 };

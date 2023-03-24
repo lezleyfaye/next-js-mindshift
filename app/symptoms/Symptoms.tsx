@@ -1,6 +1,6 @@
 'use client';
-
 import { useState } from 'react';
+import styles from './symptoms.module.scss';
 
 function RangeSlider() {
   const [value, setValue] = useState<number>(50);
@@ -16,7 +16,7 @@ function RangeSlider() {
         min="0"
         max="100"
         value={value}
-        className="range range-success"
+        className="range range-primary"
         step="25"
         onChange={handleSliderChange}
       />
