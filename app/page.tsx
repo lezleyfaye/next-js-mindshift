@@ -1,10 +1,7 @@
 import './global.scss';
-import { Inter } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './page.module.scss';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'mindshift',
