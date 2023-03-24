@@ -69,6 +69,14 @@ export default function SymptomsPage() {
       </div>
       <div>
         <h2>Did you take your medication today?</h2>
+        <label>
+          Yes
+          <input type="radio" name="meds" value="yes" />
+        </label>
+        <label>
+          No
+          <input type="radio" name="meds" value="no" />
+        </label>
       </div>
     </>
   );
