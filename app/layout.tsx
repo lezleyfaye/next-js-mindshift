@@ -30,6 +30,7 @@ export default function RootLayout(props: Props) {
             <Link href="/login">Login</Link>
             <Link href="/register">Register</Link>
             <Link href="/symptoms">Symptoms</Link>
+            <Link href="/track">Track</Link>
             <Link href="/logout" prefetch={false}>
               Logout
             </Link>
