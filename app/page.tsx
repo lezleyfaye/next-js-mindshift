@@ -26,8 +26,14 @@ export default function Home() {
           mindshift is an easy to use depression symptom tracker. Symptom graphs
           can help you take control before a depressive episode strikes.
         </p>
-        <Link href="login">Login</Link>
-        <Link href="register">Register</Link>
+        <div className={styles.linkContainer}>
+          <Link className={styles.link} href="login">
+            Login
+          </Link>
+          <Link className={styles.link} href="register">
+            Register
+          </Link>
+        </div>
       </div>
       <span>
         mindshift is not meant to diagnose or treat any medical conditions on
