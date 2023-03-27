@@ -34,38 +34,72 @@ function RangeSlider() {
 export default function SymptomsPage() {
   return (
     <>
-      <h1>How are you feeling today?</h1>
-      <div>
-        <h2>Overall Mood Today</h2>
-        <RangeSlider />
-      </div>
-      <div>
-        <h2>Feelings of Sadness</h2>
-        <RangeSlider />
-      </div>
-      <div>
-        <h2>Anger or Irritability</h2>
-        <RangeSlider />
-      </div>
-      <div>
-        <h2>Fatigue</h2>
-        <RangeSlider />
-      </div>
-      <div>
-        <h2>Focus and Concentration</h2>
-        <RangeSlider />
-      </div>
-      <div>
-        <h2>Appetite</h2>
-        <RangeSlider />
-      </div>
-      <div>
-        <h2>Somatic Symptoms</h2>
-        <RangeSlider />
-      </div>
-      <div>
-        <h2>Sleep Quality</h2>
-        <RangeSlider />
+      <h1 className={styles.header}>How are you feeling today?</h1>
+      <div className={styles.container}>
+        <div className={styles.section}>
+          <h2>Overall Mood Today</h2>
+          <div className={styles.sliderContainer}>
+            <span>Low 😟</span>
+            <RangeSlider />
+            <span>High 😀</span>
+          </div>
+        </div>
+        <div className={styles.section}>
+          <h2>Feelings of Sadness</h2>
+          <div className={styles.sliderContainer}>
+            <span>Low 😟</span>
+            <RangeSlider />
+            <span>High 😀</span>
+          </div>
+        </div>
+        <div className={styles.section}>
+          <h2>Anger or Irritability</h2>
+          <div className={styles.sliderContainer}>
+            <span>Low 😟</span>
+            <RangeSlider />
+            <span>High 😀</span>
+          </div>
+        </div>
+        <div className={styles.section}>
+          <h2>Fatigue</h2>
+          <div className={styles.sliderContainer}>
+            <span>Low 😟</span>
+            <RangeSlider />
+            <span>High 😀</span>
+          </div>
+        </div>
+        <div className={styles.section}>
+          <h2>Focus and Concentration</h2>
+          <div className={styles.sliderContainer}>
+            <span>Low 😟</span>
+            <RangeSlider />
+            <span>High 😀</span>
+          </div>
+        </div>
+        <div className={styles.section}>
+          <h2>Appetite</h2>
+          <div className={styles.sliderContainer}>
+            <span>Low 😟</span>
+            <RangeSlider />
+            <span>High 😀</span>
+          </div>
+        </div>
+        <div className={styles.section}>
+          <h2>Somatic Symptoms</h2>
+          <div className={styles.sliderContainer}>
+            <span>Low 😟</span>
+            <RangeSlider />
+            <span>High 😀</span>
+          </div>
+        </div>
+        <div className={styles.section}>
+          <h2>Sleep Quality</h2>
+          <div className={styles.sliderContainer}>
+            <span>Low 😟</span>
+            <RangeSlider />
+            <span>High 😀</span>
+          </div>
+        </div>
       </div>
       <div>
         <h2>Did you take your medication today?</h2>

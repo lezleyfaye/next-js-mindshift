@@ -27,17 +27,17 @@ export default function RootLayout(props: Props) {
         <div className={styles['bg-background']}>
           <nav className={styles.navbar}>
             <Link href="/">Home</Link>
-            <Link href="login">Login</Link>
-            <Link href="register">Register</Link>
-            <Link href="symptoms">Symptoms</Link>
-            <Link href="logout" prefetch={false}>
+            <Link href="/login">Login</Link>
+            <Link href="/register">Register</Link>
+            <Link href="/symptoms">Symptoms</Link>
+            <Link href="/logout" prefetch={false}>
               Logout
             </Link>
           </nav>
           {props.children}
 
           <footer className={styles.footer}>
-            mindshift depression tracker
+            mindshift depression tracker ©Lezley Davidson
           </footer>
         </div>
       </body>

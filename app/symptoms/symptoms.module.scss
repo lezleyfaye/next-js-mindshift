@@ -1,0 +1,31 @@
+.header {
+  padding-top: 30px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 80px;
+  text-align: center;
+  letter-spacing: -0.015em;
+  color: #182e08;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  .section {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .sliderContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

@@ -27,18 +27,18 @@ export default function Home() {
           can help you take control before a depressive episode strikes.
         </p>
         <div className={styles.linkContainer}>
-          <Link className={styles.link} href="login">
+          <Link className={styles.link} href="/login">
             Login
           </Link>
-          <Link className={styles.link} href="register">
+          <Link className={styles.link} href="/register">
             Register
           </Link>
         </div>
       </div>
-      <span>
+      <div className={styles.disclaimer}>
         mindshift is not meant to diagnose or treat any medical conditions on
         its own. Use is at your own risk.
-      </span>
+      </div>
     </main>
   );
 }
