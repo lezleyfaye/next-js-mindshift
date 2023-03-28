@@ -1,1 +1,1 @@
-<p align="center"><img src="/logoText.svg" alt="mindshiftlogo" /></p>
+<p align="center"><img src="./public/logoText.svg" alt="mindshift logo" /></p>
