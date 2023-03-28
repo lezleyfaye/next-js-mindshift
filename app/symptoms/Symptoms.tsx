@@ -1,5 +1,7 @@
 'use client';
-import { useState } from 'react';
+import 'react-datepicker/dist/react-datepicker.css';
+import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
 import styles from './symptoms.module.scss';
 
 function RangeSlider() {
@@ -32,9 +34,24 @@ function RangeSlider() {
 }
 
 export default function SymptomsPage() {
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+
+  function handleDateChange(date: Date | null) {
+    setSelectedDate(date);
+  }
+
   return (
     <>
       <h1 className={styles.header}>How are you feeling today?</h1>
+      <label>
+        Date:
+        <DatePicker
+          selected={selectedDate}
+          onChange={handleDateChange}
+          dateFormat="dd/MM/yyyy"
+          showIcon
+        />
+      </label>
       <div className={styles.container}>
         <div className={styles.section}>
           <h2>Overall Mood Today</h2>
