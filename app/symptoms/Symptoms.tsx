@@ -77,14 +77,7 @@ export default function SymptomsPage() {
             <span>High 😀</span>
           </div>
         </div>
-        <div className={styles.section}>
-          <h2>Fatigue</h2>
-          <div className={styles.sliderContainer}>
-            <span>Low 😟</span>
-            <RangeSlider />
-            <span>High 😀</span>
-          </div>
-        </div>
+
         <div className={styles.section}>
           <h2>Focus and Concentration</h2>
           <div className={styles.sliderContainer}>
@@ -110,6 +103,14 @@ export default function SymptomsPage() {
           </div>
         </div>
         <div className={styles.section}>
+          <h2>Fatigue</h2>
+          <div className={styles.sliderContainer}>
+            <span>Low 😀</span>
+            <RangeSlider />
+            <span>High 😟</span>
+          </div>
+        </div>
+        <div className={styles.section}>
           <h2>Sleep Quality</h2>
           <div className={styles.sliderContainer}>
             <span>Low 😟</span>
@@ -118,7 +119,7 @@ export default function SymptomsPage() {
           </div>
         </div>
       </div>
-      <div>
+      {/* <div>
         <h2>Did you take your medication today?</h2>
         <label>
           Yes
@@ -128,7 +129,7 @@ export default function SymptomsPage() {
           No
           <input type="radio" name="meds" value="no" />
         </label>
-      </div>
+      </div> */}
     </>
   );
 }
