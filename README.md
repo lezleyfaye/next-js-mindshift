@@ -1,6 +1,6 @@
 <p align="center"><img src="https://github.com/lezleyfaye/next-js-mindshift/blob/main/public/logoText.svg" alt="mindshift logo" /></p>
 
-# mindshift depression tracker
+<h1 align="center">mindshift depression tracker</h1>
 
 ## Description
 
@@ -24,8 +24,17 @@ After login or registration, users are able to input data to track their symptom
 - DaisyUI
 - Figma
 
+## Prototype
+
+<img src="https://github.com/lezleyfaye/next-js-mindshift/blob/main/public/images/Welcome%20page.png" alt="mindshift homepage" />
+<img src="https://github.com/lezleyfaye/next-js-mindshift/blob/main/public/images/Login.png" alt="mindshift login page" />
+<img src="https://github.com/lezleyfaye/next-js-mindshift/blob/main/public/images/Tracking%20page.png" alt="symptom tracking page" />
+
 ## Future Features
 
 - Allowing users to view their data from a customized time period
+
+* A function to help users track if they took their medication
+
 - A daily journal page with a gratitude/conquer prompt that allows users to reflect on what they were grateful for that day or what they were proud of accomplishing
 - An S.O.S page that will provide allow users to search their area and get information on who to call if they are in crisis.
