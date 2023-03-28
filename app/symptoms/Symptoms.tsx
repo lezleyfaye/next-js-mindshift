@@ -23,11 +23,11 @@ function RangeSlider() {
         onChange={handleSliderChange}
       />
       <div className="w-full flex justify-between text-xs px-2">
-        <span>|</span>
-        <span>|</span>
-        <span>|</span>
-        <span>|</span>
-        <span>|</span>
+        <span>😟</span>
+        <span className={styles.bar}>|</span>
+        <span>😐</span>
+        <span className={styles.bar}>|</span>
+        <span>😀</span>
       </div>
     </div>
   );
@@ -41,98 +41,72 @@ export default function SymptomsPage() {
   }
 
   return (
-    <>
+    <div>
       <h1 className={styles.header}>How are you feeling today?</h1>
-      <form>
-        <label>
-          Date:
-          <DatePicker
-            selected={selectedDate}
-            onChange={handleDateChange}
-            dateFormat="dd/MM/yyyy"
-            showIcon
-          />
-        </label>
-        <div className={styles.container}>
-          <div className={styles.section}>
-            <h2>Overall Mood Today</h2>
-            <div className={styles.sliderContainer}>
-              <span>Low 😟</span>
-              <RangeSlider />
-              <span>High 😀</span>
-            </div>
+      <div className={styles.container}>
+        <form>
+          <div className={styles.calendar}>
+            Date:
+            <DatePicker
+              selected={selectedDate}
+              onChange={handleDateChange}
+              dateFormat="dd/MM/yyyy"
+            />
           </div>
-          <div className={styles.section}>
-            <h2>Feelings of Sadness</h2>
-            <div className={styles.sliderContainer}>
-              <span>Low 😟</span>
-              <RangeSlider />
-              <span>High 😀</span>
+          <div>
+            <div className={styles.section}>
+              <h2 className={styles.title}>Overall Mood Today</h2>
+              <div className={styles.sliderContainer}>
+                <RangeSlider />
+              </div>
             </div>
-          </div>
-          <div className={styles.section}>
-            <h2>Anger or Irritability</h2>
-            <div className={styles.sliderContainer}>
-              <span>Low 😟</span>
-              <RangeSlider />
-              <span>High 😀</span>
+            <div className={styles.section}>
+              <h2 className={styles.title}>Feelings of Sadness</h2>
+              <div className={styles.sliderContainer}>
+                <RangeSlider />
+              </div>
             </div>
-          </div>
+            <div className={styles.section}>
+              <h2 className={styles.title}>Anger or Irritability</h2>
+              <div className={styles.sliderContainer}>
+                <RangeSlider />
+              </div>
+            </div>
 
-          <div className={styles.section}>
-            <h2>Focus and Concentration</h2>
-            <div className={styles.sliderContainer}>
-              <span>Low 😟</span>
-              <RangeSlider />
-              <span>High 😀</span>
+            <div className={styles.section}>
+              <h2 className={styles.title}>Focus and Concentration</h2>
+              <div className={styles.sliderContainer}>
+                <RangeSlider />
+              </div>
+            </div>
+            <div className={styles.section}>
+              <h2 className={styles.title}>Appetite</h2>
+              <div className={styles.sliderContainer}>
+                <RangeSlider />
+              </div>
+            </div>
+            <div className={styles.section}>
+              <h2 className={styles.title}>Somatic Symptoms</h2>
+              <div className={styles.sliderContainer}>
+                <RangeSlider />
+              </div>
+            </div>
+            <div className={styles.section}>
+              <h2 className={styles.title}>Fatigue</h2>
+              <div className={styles.sliderContainer}>
+                <RangeSlider />
+              </div>
+            </div>
+            <div className={styles.section}>
+              <h2 className={styles.title}>Sleep Quality</h2>
+              <div className={styles.sliderContainer}>
+                <RangeSlider />
+              </div>
             </div>
           </div>
-          <div className={styles.section}>
-            <h2>Appetite</h2>
-            <div className={styles.sliderContainer}>
-              <span>Low 😟</span>
-              <RangeSlider />
-              <span>High 😀</span>
-            </div>
-          </div>
-          <div className={styles.section}>
-            <h2>Somatic Symptoms</h2>
-            <div className={styles.sliderContainer}>
-              <span>Low 😟</span>
-              <RangeSlider />
-              <span>High 😀</span>
-            </div>
-          </div>
-          <div className={styles.section}>
-            <h2>Fatigue</h2>
-            <div className={styles.sliderContainer}>
-              <span>Low 😀</span>
-              <RangeSlider />
-              <span>High 😟</span>
-            </div>
-          </div>
-          <div className={styles.section}>
-            <h2>Sleep Quality</h2>
-            <div className={styles.sliderContainer}>
-              <span>Low 😟</span>
-              <RangeSlider />
-              <span>High 😀</span>
-            </div>
-          </div>
-        </div>
-        <button>Save</button>
-      </form>
-      {/* <div>
-        <h2>Did you take your medication today?</h2>
-        <label>
-          Yes
-          <input type="radio" name="meds" value="yes" />
-        </label>
-        <label>
-          No
-          <input type="radio" name="meds" value="no" />
-        </label>
-      </div> */}
-    </>
+          <button>Save</button>
+        </form>
+      </div>
+    </div>
   );
 }
