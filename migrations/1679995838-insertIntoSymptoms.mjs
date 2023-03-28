@@ -16,10 +16,12 @@ export async function up(sql) {
 }
 
 export async function down(sql) {
-  await sql`
+  for (const symptom of symptoms) {
+    await sql`
     DELETE FROM
     symptoms
     WHERE
-    id = ${symptoms.id}
+    id = ${symptom.id}
   `;
+  }
 }
