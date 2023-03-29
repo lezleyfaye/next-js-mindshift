@@ -38,17 +38,44 @@ function RangeSlider(props: RangeSliderProps) {
 }
 
 export default function SymptomsPage() {
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [overallMood, setOverallMood] = useState(50);
+  const [errors, setErrors] = useState<{ message: string }[]>([]);
 
-  function handleDateChange(date: Date | null) {
+  function handleDateChange(date) {
     setSelectedDate(date);
+  }
+
+  function handleSave(event: React.MouseEvent<HTMLButtonElement>) {
+    // to do create fetch request to api route that creates rating,
+    console.log('Selected date:', selectedDate);
+    console.log('Overall mood:', overallMood);
   }
 
   return (
     <div>
       <h1 className={styles.header}>How are you feeling today?</h1>
       <div className={styles.container}>
-        <form>
+        <form
+          onSubmit={async (event) => {
+            event.preventDefault();
+
+            const response = await fetch('/api/symptoms', {
+              method: 'POST',
+              body: JSON.stringify({
+                date: selectedDate.toISOString(),
+                overall: overallMood,
+              }),
+            });
+
+            const data: RegisterResponseBodyPost = await response.json();
+
+            if ('errors' in data) {
+              setErrors(data.errors);
+              return;
+            }
+          }}
+        >
           <div className={styles.calendar}>
             Date:
             <DatePicker
@@ -57,13 +84,27 @@ export default function SymptomsPage() {
               dateFormat="dd/MM/yyyy"
             />
           </div>
+          <button onClick={handleSave} type="submit">
+            Save
+          </button>
           <div>
             <div className={styles.section}>
               <h2 className={styles.title}>Overall Mood Today</h2>
               <div className={styles.sliderContainer}>
-                <RangeSlider />
+                <RangeSlider
+                  value={overallMood}
+                  onSliderChange={setOverallMood}
+                />
               </div>
             </div>
+
+            {/*
+
+
+
+
+
+          */}
             <div className={styles.section}>
               <h2 className={styles.title}>Feelings of Sadness</h2>
               <div className={styles.sliderContainer}>
@@ -108,7 +149,6 @@ export default function SymptomsPage() {
               </div>
             </div>
           </div>
-          <button>Save</button>
         </form>
       </div>
     </div>
