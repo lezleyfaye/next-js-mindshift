@@ -21,7 +21,7 @@ function RangeSlider(props: RangeSliderProps) {
         type="range"
         min="0"
         max="100"
-        value={value}
+        value={props.value}
         className="range range-primary"
         step="25"
         onChange={handleSliderChange}
