@@ -26,6 +26,7 @@ export default function RegisterForm(props: { returnTo?: string | string[] }) {
           onSubmit={async (event) => {
             event.preventDefault();
 
+            // want this on frontend symptoms w/onSubmit
             const response = await fetch('/api/register', {
               method: 'POST',
               body: JSON.stringify({ username, password }),
@@ -37,7 +38,7 @@ export default function RegisterForm(props: { returnTo?: string | string[] }) {
               setErrors(data.errors);
               return;
             }
-
+// stop here
             if (
               props.returnTo &&
               !Array.isArray(props.returnTo) &&
