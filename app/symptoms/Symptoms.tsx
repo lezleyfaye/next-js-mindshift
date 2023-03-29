@@ -2,13 +2,17 @@
 import 'react-datepicker/dist/react-datepicker.css';
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
+import { RegisterResponseBodyPost } from '../api/symptoms/route';
 import styles from './symptoms.module.scss';
 
-function RangeSlider() {
-  const [value, setValue] = useState<number>(50);
+type RangeSliderProps = {
+  value: number;
+  onSliderChange: (value: number) => void;
+};
 
+function RangeSlider(props: RangeSliderProps) {
   function handleSliderChange(event: React.ChangeEvent<HTMLInputElement>) {
-    setValue(parseInt(event.target.value));
+    props.onSliderChange(parseInt(event.target.value));
   }
 
   return (
