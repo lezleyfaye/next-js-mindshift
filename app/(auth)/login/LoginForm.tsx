@@ -46,7 +46,7 @@ export default function LoginForm(props: { returnTo?: string | string[] }) {
               router.push(props.returnTo);
             }
 
-            router.replace(`/profile/${data.user.username}`);
+            router.replace('/symptoms');
             router.refresh();
           }}
         >

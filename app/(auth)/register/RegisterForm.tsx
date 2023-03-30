@@ -38,7 +38,7 @@ export default function RegisterForm(props: { returnTo?: string | string[] }) {
               setErrors(data.errors);
               return;
             }
-// stop here
+            // stop here
             if (
               props.returnTo &&
               !Array.isArray(props.returnTo) &&
@@ -48,7 +48,7 @@ export default function RegisterForm(props: { returnTo?: string | string[] }) {
               return;
             }
 
-            router.replace(`/profile/${data.user.username}`);
+            router.replace('/symptoms');
             router.refresh();
           }}
         >
