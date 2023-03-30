@@ -2,6 +2,7 @@ import { cache } from 'react';
 import { sql } from './connect';
 
 type Session = {
+  userId: any;
   id: number;
   token: string;
 };
@@ -49,8 +50,7 @@ export const deleteSessionByToken = cache(async (token: string) => {
 export const getValidSessionByToken = cache(async (token: string) => {
   const [session] = await sql<Session[]>`
     SELECT
-    -- adding sessions.userID
-      sessions.userID,
+      sessions.user_id,
       sessions.id,
       sessions.token
      FROM
