@@ -56,8 +56,8 @@ export default function SymptomsPage() {
 
   function handleSave(event: React.MouseEvent<HTMLButtonElement>) {
     // to do create fetch request to api route that creates rating,
-    console.log('Selected date:', selectedDate);
-    console.log('Overall mood:', overallMood);
+    // console.log('Selected date:', selectedDate);
+    // console.log('Overall mood:', overallMood);
   }
 
   return (
