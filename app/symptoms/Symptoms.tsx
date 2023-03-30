@@ -104,7 +104,7 @@ export default function SymptomsPage() {
           </button>
           <div>
             <div className={styles.section}>
-              <h2 className={styles.title}>Overall Mood Today</h2>
+              <h2 className={styles.title}>Overall Mood</h2>
               <div className={styles.sliderContainer}>
                 <RangeSlider
                   value={overallMood}
