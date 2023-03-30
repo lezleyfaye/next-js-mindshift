@@ -40,6 +40,14 @@ function RangeSlider(props: RangeSliderProps) {
 export default function SymptomsPage() {
   const [selectedDate, setSelectedDate] = useState(null);
   const [overallMood, setOverallMood] = useState(50);
+  const [totalSadness, setTotalSadness] = useState(50);
+  const [totalAnger, setTotalAnger] = useState(50);
+  const [totalFocus, setTotalFocus] = useState(50);
+  const [totalAppetite, setTotalAppetite] = useState(50);
+  const [totalSomatic, setTotalSomatic] = useState(50);
+  const [totalFatigue, setTotalFatigue] = useState(50);
+  const [totalSleep, setTotalSleep] = useState(50);
+
   const [errors, setErrors] = useState<{ message: string }[]>([]);
 
   function handleDateChange(date) {
@@ -65,6 +73,13 @@ export default function SymptomsPage() {
               body: JSON.stringify({
                 date: selectedDate.toISOString(),
                 overall: overallMood,
+                sadness: totalSadness,
+                anger: totalAnger,
+                focus: totalFocus,
+                appetite: totalAppetite,
+                somatic: totalSomatic,
+                fatigue: totalFatigue,
+                sleep: totalSleep,
               }),
             });
 
@@ -108,44 +123,65 @@ export default function SymptomsPage() {
             <div className={styles.section}>
               <h2 className={styles.title}>Feelings of Sadness</h2>
               <div className={styles.sliderContainer}>
-                <RangeSlider />
+                <RangeSlider
+                  value={totalSadness}
+                  onSliderChange={setTotalSadness}
+                />
               </div>
             </div>
             <div className={styles.section}>
               <h2 className={styles.title}>Anger or Irritability</h2>
               <div className={styles.sliderContainer}>
-                <RangeSlider />
+                <RangeSlider
+                  value={totalAnger}
+                  onSliderChange={setTotalAnger}
+                />
               </div>
             </div>
 
             <div className={styles.section}>
               <h2 className={styles.title}>Focus and Concentration</h2>
               <div className={styles.sliderContainer}>
-                <RangeSlider />
+                <RangeSlider
+                  value={totalFocus}
+                  onSliderChange={setTotalFocus}
+                />
               </div>
             </div>
             <div className={styles.section}>
               <h2 className={styles.title}>Appetite</h2>
               <div className={styles.sliderContainer}>
-                <RangeSlider />
+                <RangeSlider
+                  value={totalAppetite}
+                  onSliderChange={setTotalAppetite}
+                />
               </div>
             </div>
             <div className={styles.section}>
               <h2 className={styles.title}>Somatic Symptoms</h2>
               <div className={styles.sliderContainer}>
-                <RangeSlider />
+                <RangeSlider
+                  value={totalSomatic}
+                  onSliderChange={setTotalSomatic}
+                />
               </div>
             </div>
             <div className={styles.section}>
               <h2 className={styles.title}>Fatigue</h2>
               <div className={styles.sliderContainer}>
-                <RangeSlider />
+                <RangeSlider
+                  value={totalFatigue}
+                  onSliderChange={setTotalFatigue}
+                />
               </div>
             </div>
             <div className={styles.section}>
               <h2 className={styles.title}>Sleep Quality</h2>
               <div className={styles.sliderContainer}>
-                <RangeSlider />
+                <RangeSlider
+                  value={totalSleep}
+                  onSliderChange={setTotalSleep}
+                />
               </div>
             </div>
           </div>
