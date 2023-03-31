@@ -103,9 +103,6 @@ export default function SymptomsPage() {
               dateFormat="dd/MM/yyyy"
             />
           </div>
-          <button className={styles.button} onClick={handleSave} type="submit">
-            Save
-          </button>
           <div>
             <div className={styles.section}>
               <h2 className={styles.title}>Overall Mood</h2>
@@ -185,6 +182,11 @@ export default function SymptomsPage() {
                   onSliderChange={setTotalSleep}
                 />
               </div>
+            </div>
+            <div className={styles.button}>
+              <button onClick={handleSave} type="submit">
+                Save
+              </button>
             </div>
           </div>
         </form>

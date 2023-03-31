@@ -35,19 +35,36 @@
 }
 
 .button {
-  border: solid 3px;
-  color: #fff;
-  font-weight: 600;
-  width: 100px;
-  height: 30px;
-  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+
+  button {
+    background-color: #182e08;
+    box-shadow: 4px 2px 2px #fff;
+    color: #fff;
+    font-weight: 600;
+    width: 100px;
+    height: 30px;
+    border-radius: 15px;
+    align-items: right;
+  }
+  button:hover {
+    background-color: #fff;
+    box-shadow: 4px 2px 2px #182e08;
+    color: #182e08;
+  }
 }
 
 .section {
+  margin-bottom: 12px;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  // box-shadow: 1px 0 8px #fff;
+  border-radius: 3px;
+  border-bottom: 3px solid #55875c;
 }
 
 .sliderContainer {
