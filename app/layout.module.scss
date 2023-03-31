@@ -9,6 +9,14 @@
   overflow: auto;
 }
 
+.navbar {
+  background-color: transparent;
+}
+
+.navbar ul.menu li > div {
+  background-color: var(--color-secondary);
+}
+
 .footer {
   // background-color: #182e08;
   color: #ffffff;

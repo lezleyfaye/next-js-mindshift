@@ -25,16 +25,37 @@ export default function RootLayout(props: Props) {
     <html lang="en" className={laila.className}>
       <body>
         <div className={styles['bg-background']}>
-          <nav className={styles.navbar}>
-            <Link href="/">Home</Link>
-            <Link href="/login">Login</Link>
-            <Link href="/register">Register</Link>
-            <Link href="/symptoms">Symptoms</Link>
-            <Link href="/track">Track</Link>
-            <Link href="/logout" prefetch={false}>
-              Logout
-            </Link>
-          </nav>
+          <div className="navbar bg-base-100 bg-opacity-0">
+            <div className="flex-none">
+              <ul className="menu menu-horizontal px-1">
+                <li tabIndex={0} className="flex items-center">
+                  <div className="flex items-center bg-secondary rounded-full p-1 mr-2">
+                    <a>
+                      <img
+                        src="/logoText.svg"
+                        alt="Mindshift Logo with name"
+                        className="h-12 w-30"
+                      />
+                    </a>
+                  </div>
+                  <ul className="p-2 bg-secondary">
+                    <li className="text-primary">
+                      <Link href="/symptoms">Symptoms</Link>
+                    </li>
+                    <li className="text-primary">
+                      <Link href="/track">Track</Link>
+                    </li>
+                    <li className="text-primary">
+                      <Link href="/logout" prefetch={false}>
+                        Logout
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+
           {props.children}
 
           <footer className={styles.footer}>
