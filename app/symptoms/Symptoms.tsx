@@ -26,7 +26,7 @@ function RangeSlider(props: RangeSliderProps) {
         step="25"
         onChange={handleSliderChange}
       />
-      <div className="w-full flex justify-between text-xs px-2">
+      <div className="w-full flex justify-between text-m px-2">
         <span>😟</span>
         <span className={styles.bar}>|</span>
         <span>😐</span>
