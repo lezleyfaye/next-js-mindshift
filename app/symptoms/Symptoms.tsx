@@ -117,13 +117,6 @@ export default function SymptomsPage() {
               </div>
             </div>
 
-            {/*
-
-
-
-
-
-          */}
             <div className={styles.section}>
               <h2 className={styles.title}>Feelings of Sadness</h2>
               <div className={styles.sliderContainer}>
@@ -133,6 +126,7 @@ export default function SymptomsPage() {
                 />
               </div>
             </div>
+
             <div className={styles.section}>
               <h2 className={styles.title}>Anger or Irritability</h2>
               <div className={styles.sliderContainer}>
@@ -152,6 +146,7 @@ export default function SymptomsPage() {
                 />
               </div>
             </div>
+
             <div className={styles.section}>
               <h2 className={styles.title}>Appetite</h2>
               <div className={styles.sliderContainer}>
@@ -161,6 +156,7 @@ export default function SymptomsPage() {
                 />
               </div>
             </div>
+
             <div className={styles.section}>
               <h2 className={styles.title}>Somatic Symptoms</h2>
               <div className={styles.sliderContainer}>
@@ -170,6 +166,7 @@ export default function SymptomsPage() {
                 />
               </div>
             </div>
+
             <div className={styles.section}>
               <h2 className={styles.title}>Fatigue</h2>
               <div className={styles.sliderContainer}>
@@ -179,6 +176,7 @@ export default function SymptomsPage() {
                 />
               </div>
             </div>
+
             <div className={styles.section}>
               <h2 className={styles.title}>Sleep Quality</h2>
               <div className={styles.sliderContainer}>
