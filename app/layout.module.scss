@@ -5,6 +5,8 @@
   background-position: center bottom;
   background-attachment: fixed;
   height: 100vh;
+  min-height: 100vh;
+  overflow: auto;
 }
 
 .footer {

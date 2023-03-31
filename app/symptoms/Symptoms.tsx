@@ -99,7 +99,7 @@ export default function SymptomsPage() {
               dateFormat="dd/MM/yyyy"
             />
           </div>
-          <button onClick={handleSave} type="submit">
+          <button className={styles.button} onClick={handleSave} type="submit">
             Save
           </button>
           <div>
