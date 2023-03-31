@@ -61,9 +61,13 @@ export default function SymptomsPage() {
   }
 
   return (
-    <div>
-      <h1 className={styles.header}>How are you feeling today?</h1>
-      <div className={styles.container}>
+    <div className={styles.container}>
+      <h1>How are you feeling today?</h1>
+      <p>
+        Rate your symptoms for the day here. <br /> Don't think too much about
+        your rating, just go with your gut feeling.
+      </p>
+      <div>
         <form
           onSubmit={async (event) => {
             event.preventDefault();
