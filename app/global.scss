@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Laila:wght@400&display=swap');
 
 *,
 *::before,
@@ -9,6 +10,6 @@
   // color: #182e08;
 }
 
-// body {
-//   overflow: hidden;
-// }
+body {
+  font-family: 'Laila', serif;
+}
