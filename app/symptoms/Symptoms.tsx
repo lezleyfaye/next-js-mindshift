@@ -1,5 +1,7 @@
 'use client';
 import 'react-datepicker/dist/react-datepicker.css';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import { RegisterResponseBodyPost } from '../api/symptoms/route';
@@ -47,6 +49,7 @@ export default function SymptomsPage() {
   const [totalSomatic, setTotalSomatic] = useState(50);
   const [totalFatigue, setTotalFatigue] = useState(50);
   const [totalSleep, setTotalSleep] = useState(50);
+  const router = useRouter();
 
   const [errors, setErrors] = useState<{ message: string }[]>([]);
 
@@ -71,6 +74,7 @@ export default function SymptomsPage() {
         <form
           onSubmit={async (event) => {
             event.preventDefault();
+            await router.push('/track');
 
             const response = await fetch('/api/symptoms', {
               method: 'POST',
