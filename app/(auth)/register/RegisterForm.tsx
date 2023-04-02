@@ -61,6 +61,7 @@ export default function RegisterForm(props: { returnTo?: string | string[] }) {
               <input
                 type="username"
                 placeholder="Username"
+                required
                 value={username}
                 onChange={(event) => setUsername(event.currentTarget.value)}
               />
@@ -68,7 +69,10 @@ export default function RegisterForm(props: { returnTo?: string | string[] }) {
             <label>
               <input
                 type="password"
-                placeholder="Password"
+                placeholder="Password (8 character minimum)"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                required
+                title="8 characters minimum"
                 value={password}
                 onChange={(event) => setPassword(event.currentTarget.value)}
               />

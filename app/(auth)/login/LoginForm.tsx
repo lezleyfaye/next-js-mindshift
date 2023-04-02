@@ -59,6 +59,7 @@ export default function LoginForm(props: { returnTo?: string | string[] }) {
               <input
                 type="username"
                 placeholder="Username"
+                required
                 value={username}
                 onChange={(event) => setUsername(event.currentTarget.value)}
               />
@@ -67,6 +68,9 @@ export default function LoginForm(props: { returnTo?: string | string[] }) {
               <input
                 type="password"
                 placeholder="Password"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                required
+                title="8 characters minimum"
                 value={password}
                 onChange={(event) => setPassword(event.currentTarget.value)}
               />
