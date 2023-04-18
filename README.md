@@ -26,7 +26,7 @@ After login or registration, users are able to input data to track their symptom
 
 ## Prototype
 
-<img src="https://github.com/lezleyfaye/next-js-mindshift/blob/main/public/images/Welcome%20page.png" alt="mindshift homepage" />
+<img src="https://github.com/lezleyfaye/next-js-mindshift/blob/main/public/images/mindshiftHomePage.png" alt="mindshift homepage" />
 <img src="https://github.com/lezleyfaye/next-js-mindshift/blob/main/public/images/Login.png" alt="mindshift login page" />
 <img src="https://github.com/lezleyfaye/next-js-mindshift/blob/main/public/images/Tracking%20page.png" alt="symptom tracking page" />
 
